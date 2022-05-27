@@ -8,18 +8,15 @@ Board::Board()
         Tile* t = new Tile('N');
         tiles.push_back(t);
     }
-    for(int i=0; i<3;i++)
-    {
+    for(int i=0; i<3;i++){
         int cell = 0;
-        do
-        {
+        do{
             cell = rand() % numTiles;
         } 
         while(tiles[cell]->getType() != 'N');
         tiles[cell]->setType('S');
         
-        do
-        {
+        do{
             cell = rand() % numTiles;
         } 
         while(tiles[cell]->getType() != 'N');
@@ -27,13 +24,15 @@ Board::Board()
     }
 }
 
-string Board::toString()
-{
+string Board::toString(){
     string txt = "BOARD: \n";
     vector<Tile*>::iterator it;
-    for(it = tiles.begin();it !=tiles.end(); ++it)
-    {
+    for(it = tiles.begin();it !=tiles.end(); ++it){
         txt += (*it)->toString()+" ";
     }
     return txt;
+}
+
+Tile* Board::getTile(int num){
+    return tiles[num];
 }

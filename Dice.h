@@ -4,8 +4,7 @@
 #include <random>
 using namespace std;
 
-class Dice
-{
+class Dice{
 private:
     int number;
 public:

@@ -13,4 +13,5 @@ private:
 public:
     Board();
     string toString();
+    Tile* getTile(int num);
 };
